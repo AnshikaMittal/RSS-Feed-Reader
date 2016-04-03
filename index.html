@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app='RSSfeedModule'>
+<head>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<style>
+	.change{
+		margin-top:50px;
+	}
+	
+	#output {
+		margin-bottom: 50px;
+	}
+	.panel .panel-heading {
+		background-color:#00BFFF;
+	}
+	.panel .panel-footer {
+		background-color:#00BFFF;
+	}
+	
+	.panel{
+	border: 1px solid black;
+	margin-left:20px;
+	}
+	body{
+	background-color:#B0E0E6;
+	}
+	
+	.iso
+	{
+		margin-top: 80px;
+	}
+	.title
+	{
+	text-align:center;
+	margin-bottom:40px;
+	}
+	</style>
+	<script type="text/javascript">
+		var timer = null
+		function start(){
+			output = $('#output'),
+			tarr = 0;
+			delay = 1000; //1 second
+			setInterval(function() {
+			tarr = tarr + delay/1000;
+			output.text(tarr);
+		}, delay );
+
+			var time = new Date()
+			var hours = time.getHours()
+			var minutes = time.getMinutes()
+		   
+			var seconds = time.getSeconds()
+			
+			var clock = hours + ":" + minutes + ":" + seconds
+			document.forms[0].display.value = clock
+			timer = setTimeout("start()",1000)
+		}
+		
+		function getIsoTime()
+		{
+			var d = new Date();
+			var n = d.toISOString();
+			document.getElementById("b").innerHTML = n;
+			
+		}
+	</script>
+</head>
+ 
+<body ng-controller='RSSFeedCtrller'  onload="start()">
+<div class="title">
+<h2> RSS Feed Reader</h2>
+</div>
+<div class = "row">
+ 
+	<div class="col-sm-9 col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading" >
+				<h4><center> Reddit feeds <center></h4>
+			</div>
+						
+			<div class="panel-body" >
+				<div ng-init="isDisplayed = true" ng-repeat="feed in feeds | orderBy:'title'" >
+					<p><span ng-repeat="item in feed.entries" ng-show="isDisplayed"> 
+						<button class="btn btn-primary btn-sm" ng-click="isDisplayed = !isDisplayed">Hide feed</button>
+						<a href="{{item.link}}" target="_blank" >{{item.title}}</a> (<span>Author: {{item.author}}</span>)(<span>{{item.publishedDate | date:'d-MM-yyyy HH:mm'}}</span>)<br />
+						<br>
+					</span></p>
+				</div>	
+			</div>
+						
+			<div class="panel-footer"></div>		
+		</div>	
+	</div>
+	
+	<div class="change col-sm-2 col-md-2 ">
+		<p><b>Time spent on the page in seconds:</b></p>
+		<p id="output"></p>
+        <form>
+			<label>Time: </label>
+			<input type="text" name="display" size="20">
+		</form>
+		<div class = "iso">
+			<label>ISO 8601 Time Format</label>
+			<button id="b" onclick="getIsoTime()">Click here for ISO Time </button>
+		</div>
+     </div>	
+</div>
+<script src="feeds.js"></script>
+	
+</body>
+</html>
