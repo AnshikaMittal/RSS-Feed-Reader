@@ -1,0 +1,74 @@
+{
+   "data":{
+      "count":21944,
+      "next":"https://dev-express.delhivery.com/fm/pickup/records/?ed=2015-07-12&sd=2015-06-12&page=2&city=Bangalore",
+      "previous":"None",
+      "results":[
+         {
+            "city":"Bangalore",
+            "count":3,
+            "cp":"Bengaluru_Banaswadi_Dc (Karnataka)",
+            "pickup_date":"2015-06-12",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":4,
+            "cp":"Bengaluru_South (Karnataka)",
+            "pickup_date":"2015-06-14",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":5,
+            "cp":"Blr_Ganabharathi (Karnataka)",
+            "pickup_date":"2015-06-14",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":0,
+            "cp":"Blr_Ganabharathi (Karnataka)",
+            "pickup_date":"2015-06-16",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":1,
+            "cp":"Blr_Domlur (Karnataka)",
+            "pickup_date":"2015-06-16",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":0,
+            "cp":"HBR Layout PC (Karnataka)",
+            "pickup_date":"2015-06-17",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":0,
+            "cp":"Blr_Domlur (Karnataka)",
+            "pickup_date":"2015-06-19",
+            "pl_name":"RV-BLR-Tej Enterprises"
+         },
+         {
+            "city":"Bangalore",
+            "count":0,
+            "cp":"BLR_HegdeNagar_PC (Karnataka)",
+            "pickup_date":"2015-06-29",
+            "pl_name":"FlipKart BLR"
+         },
+         {
+            "city":"Bangalore",
+            "count":0,
+            "cp":"Blr_Domlur (Karnataka)",
+            "pickup_date":"2015-06-29",
+            "pl_name":"HK-BLR-YOGA HEALTH FOODS LLP"
+         }
+      ]
+   },
+   "remark":"",
+   "success":"True"
+}
